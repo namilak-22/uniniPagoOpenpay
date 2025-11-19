@@ -1,0 +1,1 @@
+## Proyecto de desarrollo para una universidad interesada en cobrar sus maestrías con un carrusel de pago a través de openpay BBVA, se realizó el proyecto con PHP ya que la librería de openpay esta desarrollada en PHP, se uso como front end HTML5 y CSS, y como manejador de página se usó JS.
