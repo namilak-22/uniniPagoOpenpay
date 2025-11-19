@@ -1,0 +1,694 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #00AEEF;
+    --gris: #666;
+    --grisClaro: #FBFCFC;
+}
+
+/*  Globales **/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    background-color: var(--blanco);
+    width: 100%;
+    max-width: 120rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección de información de tarjetas */
+.card-expl {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    background-color: var(--grisClaro);
+    border-radius: 0.5rem;
+    min-height: 120px;
+    align-items: center;
+}
+
+.card-expl div {
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-expl div.credit {
+    background-image: url("/img/cards1.png");
+    border-right: 1px solid #ccc;
+    width: 90px;
+    min-height: 60px;
+    background-size: 50% auto;
+    background-position: center top;
+    margin: 0 auto;
+}
+
+.card-expl div.debit {
+    background-image: url("/img/cards2.png");
+}
+
+.card-expl h4 {
+    font-weight: 600;
+    margin: 0;
+    color: var(--oscuro);
+    font-size: 1.6rem;
+    margin-top: 5rem;
+    padding-top: 1rem;
+}
+
+/* Versión móvil para información de tarjetas (ahora como respaldo) */
+.card-expl-mobile {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--grisClaro);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+}
+
+.card-expl-mobile h4 {
+    margin: 0 0 1rem 0;
+    color: var(--oscuro);
+    font-size: 1.6rem;
+}
+
+.card-expl-mobile .mobile-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card-expl-mobile .card-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-expl-mobile .credit-mobile {
+    background-image: url("/img/cards1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+}
+
+.card-expl-mobile .debit-mobile {
+    background-image: url("/img/cards2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+}
+
+.card-expl-mobile .card-type span {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: var(--gris);
+}
+
+.boton {
+    grid-column: 1/3;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1.5rem 3rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0094d6;
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+/** Utilidades **/
+.w-sm-100 {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/** Formulario **/
+.formulario {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 2px solid var(--primario);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.formulario legend {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 auto;
+    background-color: var(--primario);
+    color: var(--blanco);
+    width: 80%;
+}
+
+/* Estilos para el campo CVV con imagen */
+.campo-cvv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.campo-cvv .input-text {
+    flex: 1;
+}
+
+.formulario #imgCvv {
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.formulario #imgCvv:hover {
+    transform: scale(1.1);
+}
+
+.contenedor-campo{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--oscuro);
+}
+
+.campo select {
+    padding: 1.2rem;
+    background-color: var(--blanco);
+    border: 1px solid var(--primario);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.combo-fecha {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.combo-fecha label {
+    margin-bottom: 1rem;
+}
+
+.combo-fecha-selects {
+    display: flex;
+    gap: 1rem;
+}
+
+.combo-fecha select {
+    flex: 1;
+    
+}
+
+.input-text {
+    border: 1px solid var(--primario);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+
+
+/* Estilos para checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.form-check-input {
+    margin-right: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.form-check-label {
+    font-size: 1.6rem;
+}
+
+/* Campos que aparecen/desaparecen */
+.oculto {
+    display: none !important;
+}
+
+.aparecer, .aparecer1, .aparecer2, .aparecer3 {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease, max-height 0.5s ease;
+    max-height: 500px;
+    overflow: hidden;
+
+}
+
+/** Footer OpenPay - NUEVO DISEÑO **/
+.openpay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--grisClaro);
+    border-radius: 0.5rem;
+    gap: 2rem;
+}
+
+.openpay-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.openpay-item:first-child {
+    justify-content: flex-start;
+}
+
+.openpay-item:last-child {
+    justify-content: flex-end;
+}
+
+.openpay .logo-container {
+    background-image: url("/img/openpay.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 50px;
+    order: 3; /* Logo a la derecha 1 izquierda 2*/
+}
+
+.openpay .text-content:first-child {
+    order: 1; /* Texto a la izquierda */
+    text-align: right;
+}
+
+.openpay .shield-container {
+    background-image: url("/img/security.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 50px;
+    order: 1; /* Escudo a la izquierda */
+}
+
+.openpay .text-content:last-child {
+    order: 2; /* Texto a la derecha */
+    text-align: left;
+}
+
+.openpay .text-content p {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--gris);
+    line-height: 1.4;
+}
+
+.openpay .divider {
+    width: 1px;
+    height: 50px;
+    background-color: #ccc;
+}
+
+/** Logos de universidades - SIEMPRE EN FILA **/
+.footer_logo {
+    display: flex;               
+    justify-content: space-around; 
+    align-items: center;         
+    width: 100%;               
+    padding: 10px 0;           
+    box-sizing: border-box;      
+    margin-top: 15px;
+    flex-wrap: nowrap; /* Evitar que se envuelvan */
+}
+
+.footer_logo img {
+    max-width: 20%;             
+    height: auto;               
+    margin: 5px;               
+    object-fit: contain;        
+    flex: 1; /* Hace que todas las imágenes tengan el mismo tamaño */
+}
+
+/* Media queries para tablets */
+@media (min-width: 768px) {
+    .contenedor-campo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .campo:nth-child(9),
+    .campo:nth-child(10),
+    .campo:nth-child(11) {
+        grid-column: 1 / 3;
+    }
+    
+    .combo-fecha {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .combo-fecha label {
+        flex-basis: 20rem;
+        margin-bottom: 0;
+    }
+    
+    .combo-fecha-selects {
+        flex: 1;
+    }
+}
+
+/* Media queries para dispositivos móviles - TARJETAS VISIBLES */
+@media (max-width: 767px) {
+    .card-expl div.debit {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        min-height: 60px;
+        background-size: 90% auto;
+        background-position: center top;
+        margin: 0 auto;
+    }
+    .card-expl div.credit {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        min-height: 60px;
+        background-size: 90% auto;
+        background-position: center top;
+        margin: 0 auto;
+    }
+    body {
+        padding: 1rem;
+    }
+    
+    .contenedor {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    /* MOSTRAR las tarjetas en móvil en lugar de ocultarlas */
+    .card-expl {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        min-height: auto;
+    }
+    
+    .card-expl div {
+        min-height: 80px;
+        padding: 0.5rem;
+        border-right: none !important;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+    }
+    
+    .card-expl div:last-child {
+        border-bottom: none;
+    }
+    
+    .card-expl h4 {
+        font-size: 1.4rem;
+        padding-top: 0.5rem;
+    }
+    
+    /* Ocultar la versión móvil alternativa */
+    .card-expl-mobile {
+        display: none;
+    }
+    
+    .formulario fieldset {
+        padding: 1.5rem;
+    }
+    
+    .formulario legend {
+        width: 90%;
+        font-size: 1.6rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .campo {
+        margin-bottom: 1rem;
+    }
+    
+    .campo label {
+        font-size: 1.4rem;
+    }
+    
+    .input-text, .campo select {
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    /* Ajustes para el campo CVV en móviles */
+    .campo-cvv {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .formulario #imgCvv {
+        width: 35px;
+        height: 22px;
+    }
+    
+    .boton {
+        padding: 1.2rem;
+        font-size: 1.6rem;
+    }
+    
+    .form-check-input {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    
+    .form-check-label {
+        font-size: 1.4rem;
+    }
+    
+    /* Ajustes para OpenPay en móviles */
+    .openpay {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .openpay-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .openpay .text-content:first-child,
+    .openpay .text-content:last-child {
+        text-align: center;
+        order: 2;
+    }
+    
+    .openpay .logo-container,
+    .openpay .shield-container {
+        order: 1;
+    }
+    
+    .openpay .divider {
+        width: 80%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+    
+    /* Footer logos en fila incluso en móviles */
+    .footer_logo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .footer_logo img {
+        max-width: 22%;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Media queries para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 1rem;
+    }
+    
+    .formulario fieldset {
+        padding: 1rem;
+    }
+    
+    .formulario legend {
+        font-size: 1.4rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Ajustar tamaño de imágenes de tarjetas en móviles muy pequeños */
+    .card-expl div {
+        background-size: 80%;
+        min-height: 70px;
+    }
+    
+    .card-expl h4 {
+        font-size: 1.3rem;
+    }
+    
+    /* Ajustes adicionales para el campo CVV en móviles muy pequeños */
+    .campo-cvv {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .formulario #imgCvv {
+        width: 30px;
+        height: 19px;
+    }
+    
+    .boton {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    
+    .openpay .logo-container,
+    .openpay .shield-container {
+        width: 100px;
+        height: 40px;
+    }
+    
+    .openpay .text-content p {
+        font-size: 1.2rem;
+    }
+    
+    /* Ajustar logos del footer en móviles muy pequeños */
+    .footer_logo {
+        justify-content: space-around;
+    }
+    
+    .footer_logo img {
+        max-width: 20%;
+        padding: 0.5rem;
+    }
+}
+
+/* Estilos para mejorar la experiencia en formularios */
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 2px rgba(0, 174, 239, 0.2);
+}
+
+/* Estilos para validación */
+input:invalid {
+    border-color: #ff4444;
+}
+
+input:valid {
+    border-color: #00C851;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #aaa;
+}
+
+::-ms-input-placeholder {
+    color: #aaa;
+}

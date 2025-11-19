@@ -1,0 +1,152 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #00AEEF;
+    --gris: #666;
+    --grisClaro: #FBFCFC;
+    --rojo:#FF0000;
+    --verde:#008f39;
+}
+/*  Globales **/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /* Hack para Box Model **/
+    scroll-snap-type: y mandatory;
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px; /* 1rem = 10px */
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% );
+}
+
+.contenedor {
+    background-color: var(--grisClaro);
+    max-width: 120rem;
+    height: auto;
+    margin: 0 auto;
+}
+.contenedor-exito {
+    color:var(--verde);
+    text-align: center;
+
+}
+.contenedor-exito h3{
+    color:var(--primario);
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+
+.contenedor-exito h4{
+    color:var(--oscuro);
+    text-align: center;
+}
+.contenedor .error{
+    color:var(--rojo);
+    text-align: center;
+}
+.contenedor-parrafos {
+    color:var(--oscuro);
+    font-size: 1.4rem;
+}
+
+.boton {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+}
+
+/** Utilidades **/
+.w-sm-100 {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+.flex {
+    display: flex;
+}
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/* Span clases */
+.number-card{
+    font-size: 2.4rem;
+    font-weight: bolder;
+}
+.motivo-pago{
+    font-size: 4.5rem;
+    font-weight: bolder;
+}
+.motivo{
+    color:var(--rojo);
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+/* IMAGENES */
+.logo img{
+    width: 40rem;
+    height: 10rem;
+}
+
+
+/** Contacto **/
+
+.oculto{
+    display: none;
+}
+

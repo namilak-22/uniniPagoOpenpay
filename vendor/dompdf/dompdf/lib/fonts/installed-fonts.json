@@ -1,0 +1,8 @@
+{
+    "roboto": {
+        "300": "\/Users\/rodrigogutierrez\/Documentos\/Documentos\/UNINI\/vendor\/dompdf\/dompdf\/lib\/fonts\/roboto_300_67dc12b3f1f113305ec431e641e8a57d",
+        "normal": "\/Users\/rodrigogutierrez\/Documentos\/Documentos\/UNINI\/vendor\/dompdf\/dompdf\/lib\/fonts\/roboto_normal_a5fc1441144adab7ff7fd3a2b9c8ceea",
+        "500": "\/Users\/rodrigogutierrez\/Documentos\/Documentos\/UNINI\/vendor\/dompdf\/dompdf\/lib\/fonts\/roboto_500_dbc341cef1fd80a9ebe6c202433656ea",
+        "bold": "roboto_bold_33a1d3e1e3260160834fe00ba212e515"
+    }
+}
